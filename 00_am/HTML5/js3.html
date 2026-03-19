@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function action(callback) {
+        callback();
+      }
+
+      function eat() {
+        alert('밥먹자.');
+      }
+
+      function run() {
+        alert('달리자.');
+      }
+
+      action(run);
+      action(run);
+      action(eat);
+      action(run);
+
+      action(function () {
+        alert('잘살아보자..');
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
