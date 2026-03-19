@@ -22,11 +22,3 @@
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white">
 </p>
 
----
-
-### 📝 Learning Status
-- [ ] **MyBatis + MySQL 연동 실습**
-- [ ] **Spring 환경 설정**
-- [ ] **Vue.js 기초 문법 익히기**
-- [ ] MongoDB NoSQL 데이터 모델링
-
