@@ -32,6 +32,13 @@
           </tr>
         </thead>
         <tbody>
+          <!-- 
+            - :key 속성
+            - 반복 요소의 고유 식별자를 지정
+            - 반복 요소의 고유 식별자를 지정하지 않으면 오류 발생
+            - 배열 순회 시 index를 :key로 지정하는 것은 매우 좋지 않음!!
+              왜? 데이터가 바뀌어도 Vue가 같은 DOM으로 착각해서 DOM 재사용이 꼬일 수 있음
+          -->
           <tr v-for="contact in contacts" :key="no">
             <td>{{contact.no}}</td>
             <td>{{contact.name}}</td>
