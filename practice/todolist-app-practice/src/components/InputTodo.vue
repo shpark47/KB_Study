@@ -15,24 +15,17 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: 'InputTodo',
-  data() {
-    return {
-      todo: '',
-    };
-  },
-  emits: ['add-todo'],
-  methods: {
-    addTodo() {
-      if (this.todo.length >= 3) {
-        this.$emit('add-todo', this.todo);
-        this.todo = '';
-        return;
-      }
-      alert('할일은 3글자 이상 입력해주세요');
-    },
-  },
+<script setup>
+import { ref } from 'vue';
+
+const todo = ref('');
+const emit = defineEmits(['add-todo']);
+const addTodo = () => {
+  if (todo.value.length >= 3) {
+    emit('add-todo', todo.value);
+    todo.value = '';
+    return;
+  }
+  alert('할일은 3글자 이상 입력해주세요');
 };
 </script>

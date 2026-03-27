@@ -13,15 +13,8 @@
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import TodoListItem from './TodoListItem.vue';
-
-export default {
-  name: 'TodoList',
-  components: {
-    TodoListItem,
-  },
-  props: ['todolist'],
-  emits: ['check-completed', 'delete-todo'],
-};
+const props = defineProps(['todolist']);
+const emits = defineEmits(['check-completed', 'delete-todo']);
 </script>

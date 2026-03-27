@@ -17,23 +17,20 @@
     >
   </li>
 </template>
-<script>
-export default {
-  name: 'TodoListItem',
-  props: {
-    todoitem: {
-      type: Object,
-      required: true,
-    },
+<script setup>
+const props = defineProps({
+  todoitem: {
+    type: Object,
+    required: true,
   },
-  emits: ['check-completed', 'delete-todo'],
-  methods: {
-    checkCompleted() {
-      this.$emit('check-completed', this.todoitem.id);
-    },
-    deleteTodo() {
-      this.$emit('delete-todo', this.todoitem.id);
-    },
-  },
+});
+
+const emits = defineEmits(['check-completed', 'delete-todo']);
+
+const checkCompleted = () => {
+  emits('check-completed', props.todoitem.id);
+};
+const deleteTodo = () => {
+  emits('delete-todo', props.todoitem.id);
 };
 </script>

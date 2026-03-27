@@ -5,22 +5,20 @@
     <div class="col">미완료 todo 개수 : {{ uncompletedTodo }}</div>
   </div>
 </template>
-<script>
-export default {
-  name: 'TodoCount',
-  props: {
-    todolist: {
-      type: Array,
-      required: true,
-    },
+<script setup>
+import { computed } from 'vue';
+
+const props = defineProps({
+  todolist: {
+    type: Array,
+    required: true,
   },
-  computed: {
-    completedTodo() {
-      return this.todolist.filter((item) => item.completed).length;
-    },
-    uncompletedTodo() {
-      return this.todolist.filter((item) => item.completed === false).length;
-    },
-  },
-};
+});
+
+const completedTodo = computed(() => {
+  return props.todolist.filter((item) => item.completed).length;
+});
+const uncompletedTodo = computed(() => {
+  return props.todolist.filter((item) => item.completed === false).length;
+});
 </script>
