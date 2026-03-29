@@ -9,15 +9,32 @@
       :checked="todoitem.completed"
       @click="checkCompleted"
     />
-    <span class="pointer" :class="todoitem.completed ? 'todo-done' : ''">
+    <span
+      v-if="todoitem.isEditing == false"
+      class="pointer me-3"
+      :class="todoitem.completed ? 'todo-done' : ''"
+      @click="checkCompleted"
+    >
       {{ todoitem.todo }} {{ todoitem.completed ? '(완료)' : '' }}
     </span>
+    <input
+      class="me-3"
+      v-else
+      ref="editInput"
+      :value="todoitem.todo"
+      @keyup.enter="updateTodo"
+      @keyup.esc="cancelUpdate"
+      @blur="cancelUpdate"
+    />
+    <span class="float badge bg-success pointer" @click="updateBtn">수정</span>
     <span class="float-end badge bg-secondary pointer" @click="deleteTodo"
       >삭제</span
     >
   </li>
 </template>
 <script setup>
+import { nextTick, ref } from 'vue';
+
 const props = defineProps({
   todoitem: {
     type: Object,
@@ -25,12 +42,35 @@ const props = defineProps({
   },
 });
 
-const emits = defineEmits(['check-completed', 'delete-todo']);
+const emits = defineEmits([
+  'check-completed',
+  'delete-todo',
+  'update-btn',
+  'update-todo',
+  'cancel-update',
+]);
 
 const checkCompleted = () => {
   emits('check-completed', props.todoitem.id);
 };
 const deleteTodo = () => {
   emits('delete-todo', props.todoitem.id);
+};
+
+const editInput = ref(null);
+
+const updateBtn = () => {
+  emits('update-btn', props.todoitem.id);
+  nextTick(() => {
+    editInput.value.focus();
+  });
+};
+
+const updateTodo = (e) => {
+  emits('update-todo', { id: props.todoitem.id, todo: e.target.value });
+};
+
+const cancelUpdate = () => {
+  emits('cancel-update', props.todoitem.id);
 };
 </script>
