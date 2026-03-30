@@ -72,7 +72,6 @@ const checkCompleted = (id) => {
   let i = todoList.findIndex((item) => id === item.id);
   // TodoList.vue에서 넘겨받은 id로 todoList 배열에서 맞는 첫번째 id를 찾아서 i에 몇번째 배열에 있는지 변수저장
   todoList[i].completed = !todoList[i].completed;
-  todoList[i].isPinned = false;
 };
 
 const deleteTodo = (id) => {
