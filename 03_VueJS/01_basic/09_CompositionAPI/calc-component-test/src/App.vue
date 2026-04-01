@@ -1,10 +1,10 @@
 <template>
   <div>
     <!-- <Calc /> -->
-    <!-- <Calc2 /> -->
+    <Calc2 />
     <!-- <Calc3 /> -->
     <!-- <Calc4 /> -->
-    <Calc5 />
+    <!-- <Calc5 /> -->
   </div>
 </template>
 

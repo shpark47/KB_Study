@@ -11,6 +11,10 @@ import { reactive } from 'vue';
 export default {
   name: 'Calc3',
   setup() {
+    /* reactive()
+      - 객체를 반응형 데이터로 변환
+      - 반환된 객체의 프로퍼티(속성)로 직접 값에 접근 (.value 안씀)
+    */
     const state = reactive({ x: 10, y: 20, result: 30 });
     const calcAdd = (num1, num2) => {
       state.result = num1 + num2;
