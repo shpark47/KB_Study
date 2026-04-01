@@ -15,6 +15,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const path = route.path;
+console.log(path);
 </script>
 
 <style scoped></style>
