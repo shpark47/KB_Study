@@ -15,7 +15,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const path = route.path;
-console.log(path);
+console.log(`요청 경로 : ${path}`);
 </script>
 
 <style scoped></style>
