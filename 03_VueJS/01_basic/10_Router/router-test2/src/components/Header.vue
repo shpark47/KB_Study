@@ -9,6 +9,11 @@
       <!-- :class="navClass" -> navClass 변수에 들어있는 값을 class 속성값으로 사용 -->
       <ul class="navbar-nav">
         <li class="nav-item">
+          <router-link class="nav-link" :to="{ name: 'home' }"
+            >Home</router-link
+          >
+        </li>
+        <li class="nav-item">
           <!-- router-link : 라우터 링크 태그 (a태그 역할), to 속성에 이동할 경로 지정 -->
           <!-- <router-link class="nav-link" to="/members">멤버</router-link> -->
           <router-link class="nav-link" :to="{ name: 'members' }"

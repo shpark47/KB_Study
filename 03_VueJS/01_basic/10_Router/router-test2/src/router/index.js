@@ -5,6 +5,9 @@
 // 페이지 컴포넌트 가져오기
 // @ : src 폴더를 의미하는 별칭(alias)
 // -> vite.config.js에 작성됨
+import MembersFooter from '@/components/members/MembersFooter.vue';
+import MembersLeft from '@/components/members/MembersLeft.vue';
+import Home from '@/pages/Home.vue';
 import MemberInfo from '@/pages/MemberInfo.vue';
 import Members from '@/pages/Members.vue';
 import { createRouter, createWebHistory } from 'vue-router';
@@ -14,14 +17,24 @@ const router = createRouter({
   // routes : URL 주소와 컴포넌트를 연결해놓은 설정 목록
   routes: [
     {
+      path: '/', // '/' 주소로 요청이 오면
+      component: Home, // import한 Home 컴포넌트
+      name: 'home',
+    },
+    {
       path: '/members', // 해당 URL일 때
-      component: Members, // 보여줄 컴포넌트
+      components: {
+        default: Members,
+        left: MembersLeft,
+        footer: MembersFooter,
+      }, // 보여줄 컴포넌트
       name: 'members', // 라우터를 이름으로 부르기 위한 옵션
     },
-
     // 동적 라우트 패턴
+    // -> URL에 따라 값이 바뀌는 라우트
+    // (\\d+) : 숫자만 허용(정규표현식)
     {
-      path: '/members/:id',
+      path: '/members/:id(\\d+)',
       component: MemberInfo,
       name: 'members/id',
     },
