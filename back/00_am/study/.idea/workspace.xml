@@ -51,10 +51,11 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/workspace/back/00_am/study",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "모듈",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -116,6 +117,7 @@
       <workItem from="1776137435901" duration="3498000" />
       <workItem from="1776210437281" duration="368000" />
       <workItem from="1776212033331" duration="231000" />
+      <workItem from="1776212452715" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="git ignore 테스트">
       <option name="closed" value="true" />
