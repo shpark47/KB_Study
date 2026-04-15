@@ -1,4 +1,4 @@
-package ch04.sec02;
+package ch04.sec04;
 
 public class SumFrom1To100Example2 {
     public static void main(String[] args) {
