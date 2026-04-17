@@ -23,8 +23,12 @@ public class ArrayExample2 { // 예제 작성용 클래스
         }
 
         // 2. 향상된 for문
+        // 작성법 : for(자료형 변수명 : 배열 또는 컬렉션명){ }
+        // -> index가 필요한 경우에는 일반 for문 사용
+        int i = 0;
         for (int a : arr) { // arr안의 값 하나씩
-            System.out.printf("%d\n", a);
+            System.out.printf("arr[%d] : %d\n", i, a);
+            i++;
         }
     }
 
@@ -49,15 +53,31 @@ public class ArrayExample2 { // 예제 작성용 클래스
         int num = sc.nextInt();
         int[] scores = new int[num];
         int sum = 0;
-        int avg;
+        double avg;
 
         for (int i = 0; i < scores.length; i++) {
             System.out.printf("%d번 점수 입력 : ", i + 1);
+            // 입력 받은 정수를 배열 요소에 저장
             scores[i] = sc.nextInt();
             sum += scores[i];
         }
-        avg = sum / num;
+        avg = (double) sum / num;
         System.out.println("합계 : " + sum + " 점");
         System.out.println("평균 : " + avg + " 점");
+    }
+
+    public void ex3() {
+        // 저녁 메뉴 뽑기
+        // 배열 선언과 동시에 초기화
+        String[] menu = {"햄버거", "돈까스", "삼겹살", "아구찜", "파스타", "서브웨이"};
+
+        // 난수를 발생시켜서 메뉴 출력하기
+        int random = (int) (Math.random() * 6);
+        // 0.0 <= x < 1.0
+        // 0.0 <= x * 6 < 6.0
+        // 0 <= (int)(x * 6) < 6
+
+        System.out.println(random);
+        System.out.println("저녁 메뉴 추천 : " + menu[random]);
     }
 }
