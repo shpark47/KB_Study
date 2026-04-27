@@ -1,4 +1,4 @@
-package test1;
+package test;
 
 public class SuperManUse {
     public static void main(String[] args) {

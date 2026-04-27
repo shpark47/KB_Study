@@ -1,4 +1,4 @@
-package test1;
+package test;
 //import java.lang.*;
 public class Man extends Person {
     int power;

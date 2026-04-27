@@ -1,4 +1,4 @@
-package test1;
+package test;
 
 //import java.util.ArrayList;
 //import java.util.List;
@@ -21,7 +21,7 @@ public class CastingTest {
         //List list = new AdvancedList();
         //ArrayList list = new ArrayList(); --> 결합도 높음.
 
-        list.add(new String("test1"));
+        list.add(new String("test"));
         list.add(new Random());
         list.add(new Date());
         list.add(new Person("클라크", 28));

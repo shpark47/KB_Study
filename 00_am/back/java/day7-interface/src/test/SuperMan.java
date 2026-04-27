@@ -1,4 +1,4 @@
-package test1;
+package test;
 
 public class SuperMan extends Man {
     boolean fly; //false
