@@ -3,7 +3,10 @@ package libs;
 public class StudentUse {
     public static void main(String[] args) {
         Student s = new Student();
-        s.setNo(1);
+        s.setId("100");
         System.out.println(s);
+
+        Student s1 = new Student("100");
+        System.out.println(s1);
     }
 }

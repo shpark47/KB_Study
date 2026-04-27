@@ -1,15 +1,13 @@
 package libs;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 public class Student {
     @NonNull
-    private int no;
+    private String id;
     private String name;
 }
