@@ -17,6 +17,7 @@
 **/out/
 # AWS User-specific
 .idea/**/aws.xml
+**/.gitignore
 
 # Generated files
 .idea/**/contentModel.xml
