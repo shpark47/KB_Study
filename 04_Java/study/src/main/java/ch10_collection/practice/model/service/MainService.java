@@ -136,12 +136,13 @@ public class MainService {
         String pw = sc.nextLine();
 
         for (Member m : members) {
-            if (m.getMemberId().equals(id) && m.getMemberPw().equals(pw)) {
-                loginMember = m;
-                System.out.println(m.getMemberName() + "님 환영합니다.");
-            }else{
-                System.out.println("아이디 또는 비밀번호가 일치하지 않습니다.");
-            }
+            if (m.getMemberId().equals(id) && m.getMemberPw().equals(pw)) loginMember = m;
+        }
+
+        if (loginMember == null) {
+            System.out.println("아이디 또는 비밀번호가 일치하지 않습니다.");
+        } else {
+            System.out.println(loginMember.getMemberName() + "님 환영합니다.");
         }
     }
 }

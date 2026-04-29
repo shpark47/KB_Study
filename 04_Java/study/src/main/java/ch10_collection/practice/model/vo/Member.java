@@ -3,6 +3,8 @@ package main.java.ch10_collection.practice.model.vo;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Objects;
+
 @Getter
 @Setter
 public class Member {
