@@ -18,7 +18,7 @@ public class LoginService {
 		int count = 1;
 
 		Random random = new Random();
-		int answer = random.nextInt(99) + 1;
+		int answer = random.nextInt(100) + 1;
 
 		do {
 			System.out.print(count + "번째 입력 : ");
